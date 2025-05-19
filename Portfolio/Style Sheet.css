@@ -1,0 +1,435 @@
+html{
+    color: rgb(32, 40, 51);
+    background-color: rgb(11, 12, 16);
+}
+
+.backgroundContainer{
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    z-index: -2;
+}
+
+.bubbles{
+    display: flex;
+}
+
+.bubbles span{
+    width: 30px;
+    height: 30px;
+    background: #ff2d75;
+    margin: 0 4px;
+    border-radius: 50%;
+    box-shadow: 
+    0 0 0 10px #ff2d7544,
+    0 0 50px #ff2d75,
+    0 0 100px #ff2d75;
+    animation: bubblesMovement 15s linear infinite;
+    animation-duration: calc(125s / var(--i));
+}
+
+.bubbles span:nth-child(even){
+    background: #4fc3dc;
+    box-shadow: 
+    0 0 0 10px #4fc3dc44,
+    0 0 50px #4fc3dc,
+    0 0 100px #4fc3dc;
+}
+
+@keyframes bubblesMovement {
+    0%{
+        transform: translateY(100vh) scale(0);
+    }
+    100%{
+        transform: translateY(-10vh) scale(1);
+    }
+}
+
+@font-face{
+    font-family: neon;
+    src: url("Resources/neon-bright/Neon Bright.ttf")
+}
+
+.menu{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100px;
+    height: 100vh;
+    font-size: 25px;
+    font-family: neon;
+    color: white;
+    background-color: rgb(32, 40, 51);
+}
+
+aside{
+    margin-top: 8vh;
+    margin-bottom: 8vh;
+}
+
+#homeTxt, #resumeTxt, #workTxt, #awardsTxt{
+    position: absolute;
+    text-align: right;
+    float: right;
+    z-index: -1;
+    background-color: rgb(32, 40, 51);
+}
+
+#homeTxt, #workTxt{
+    text-shadow: 
+    0 0 3px #4fc3dc,
+    0 0 6px #4fc3dc,
+    0 0 9px #4fc3dc,
+    0 0 12px #4fc3dc,
+    0 0 15px #4fc3dc,
+    0 0 18px #4fc3dc;
+}
+
+#resumeTxt, #awardsTxt{
+    text-shadow: 
+    0 0 3px #ff2d75,
+    0 0 6px #ff2d75,
+    0 0 9px #ff2d75,
+    0 0 12px #ff2d75,
+    0 0 15px #ff2d75,
+    0 0 18px #ff2d75;
+}
+
+body{
+    margin-left: 105px;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    text-align: center;
+    font-family: monospace;
+    font-size: clamp(0.75rem, 2vw, 1.5rem);
+}
+
+.titleTxt{
+    font-size: 3vw;
+    font-family: neon;
+    text-align: center;
+    color: rgb(32, 40, 51);
+    margin-bottom: 100px;
+    animation-name: titleGlowOn;
+    animation-timing-function: ease-in;
+    animation-fill-mode: forwards;
+    animation-duration: 2s;
+    animation-delay: 1s;
+}
+
+#underlining{
+    margin-top: -7vw;
+    left: 35vw;
+    color: rgb(32, 40, 51);
+    animation-name: underlineGlowOn;
+    animation-timing-function: ease-in;
+    animation-fill-mode: forwards;
+    animation-duration: 2s;
+    animation-delay: 1s;
+}
+
+.content{
+    background-color: rgb(32, 40, 51);
+    border-radius: 30px;
+    margin-left: 10px;
+    margin-right: 10px;
+    padding: 0px 5px 0px 5px;
+    border: 5px, solid;
+    border-color: rgb(32, 40, 51);
+    animation-name: contentGlowOn;
+    animation-timing-function: ease-in;
+    animation-fill-mode: forwards;
+    animation-duration: 2s;
+    animation-delay: 1s;
+}
+
+#menuDescription{
+    display: flex;
+    flex-wrap: wrap;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+#menuImgEx{
+    width: 100vw;
+    max-width: 100px;
+    min-width: 25px;
+    height: auto;
+    padding-right: 10px;
+}
+
+.menuTxtEx{
+    font-family: neon;
+}
+
+#menuDescription > h2{
+    text-align: left;
+}
+
+#txtExStyle1{
+    text-shadow: 
+    0 0 3px #4fc3dc,
+    0 0 6px #4fc3dc,
+    0 0 9px #4fc3dc,
+    0 0 12px #4fc3dc,
+    0 0 15px #4fc3dc,
+    0 0 18px #4fc3dc;
+}
+
+#txtExStyle2{
+    text-shadow: 
+    0 0 3px #ff2d75,
+    0 0 6px #ff2d75,
+    0 0 9px #ff2d75,
+    0 0 12px #ff2d75,
+    0 0 15px #ff2d75,
+    0 0 18px #ff2d75;
+}
+
+#resumePic{
+    width: 50vw;
+    min-width: 325px;
+    border: 5px, solid;
+    border-radius: 30px;
+    border-color: rgb(32, 40, 51);
+    animation-name: contentGlowOn;
+    animation-timing-function: ease-in;
+    animation-fill-mode: forwards;
+    animation-duration: 2s;
+    animation-delay: 1s;
+}
+
+.sampleOption{
+    text-decoration: underline;
+    margin: auto;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+#programPic, #codePic{
+    visibility: hidden;
+    border-radius: 20px;
+    margin: auto;
+}
+
+#websiteLink{
+    color: #4fc3dc;
+    text-decoration: underline;
+    justify-self: center;
+}
+
+#websiteLink:active{
+    color: #ff2d75;
+}
+
+#popupBackground{
+    width: 100%;
+    height: 130%;
+    z-index: 3;
+    background-color: rgba(0, 0, 0, 0.541);
+    position: fixed;
+    left: 0px;
+    top: -10px;
+}
+
+#popupContainer{
+    
+    background-color: rgb(32, 40, 51);
+    border: 25px, solid;
+    border-color: rgb(32, 40, 51);
+    border-radius: 30px;
+    z-index: 4;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#popupPic{
+    width: 80vw;
+    height: auto;
+
+    @media (min-width: 1250px){
+        height: 50vw;
+        width: auto;
+    }
+}
+
+#popupClose{
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    font-size: 30px;
+    font-family: neon;
+    color: white;
+    vertical-align: super;
+    text-align: center;
+    z-index: 5;
+    background-color: rgb(11, 12, 16);
+    border: 7px, solid;
+    border-color: rgb(32, 40, 51);
+    border-radius: 100%;
+    margin-left: 100%;
+    top: -60px;
+}
+
+#awardContainer{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+}
+
+#awardOption{
+    width: 200px;
+    justify-content: center;
+    min-height: 100px;
+    max-height: fit-content;
+}
+
+#awardImg{
+    max-width: 100px;
+    width: 15vw;
+}
+
+.awardItem{
+    display: none;
+}
+
+.awardItem.show{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+footer{
+    flex-direction: column;
+    margin: auto 10px 5px 10px;
+    background-color: rgb(32, 40, 51);
+    border: 5px, solid;
+    border-radius: 15px;
+    border-color: rgb(32, 40, 51);
+    animation-name: footerGlowOn;
+    animation-timing-function: ease-in;
+    animation-fill-mode: forwards;
+    animation-duration: 2s;
+    animation-delay: 1s;
+}
+
+#dates{
+    text-align: left;
+    float: left;
+    margin-left: 20px;
+}
+
+#contact{
+    text-align: right;
+    float: right;
+    margin-right: 20px;
+}
+
+@keyframes contentGlowOn {
+    100%{
+        border-color: #4fc3dc;
+        box-shadow: 
+        0 0 0 5px #4fc2dc44,
+        0 0 10px #4fc3dc,
+        0 0 15px #4fc3dc;
+        color: white;
+    }
+    40%, 80%{
+        border-color: rgb(32, 40, 51);
+        box-shadow: none;
+        color: rgb(32, 40, 51);
+    }
+    20%, 60%{
+        border-color: white;
+        color: white;
+        box-shadow: 
+        0 0 0 5px #ffffff44,
+        0 0 10px #ffffff44,
+        0 0 15px #ffffff44;
+    }
+}
+
+@keyframes footerGlowOn {
+    100%{
+        border-color: #ff2d75;
+        box-shadow: 
+        0 0 0 5px #ff2d7544,
+        0 0 10px #ff2d75,
+        0 0 15px #ff2d75;
+        color: white;
+    }
+    40%, 80%{
+        border-color: rgb(32, 40, 51);
+        box-shadow: none;
+        color: rgb(32, 40, 51);
+    }
+    20%, 60%{
+        border-color: white;
+        box-shadow: 
+        0 0 0 5px #ffffff44,
+        0 0 10px #ffffff44,
+        0 0 15px #ffffff44;
+        color: white;
+    }
+}
+
+@keyframes titleGlowOn {
+    100%{
+        color: white;
+        text-shadow: 
+        0 0 3px #4fc3dc,
+        0 0 6px #4fc3dc,
+        0 0 9px #4fc3dc,
+        0 0 12px #4fc3dc,
+        0 0 15px #4fc3dc,
+        0 0 18px #4fc3dc;
+    }
+    40%, 80%{
+        color: rgb(32, 40, 51);
+        text-shadow: none;
+    }
+    20%, 60%{
+        color: white;
+        text-shadow: 
+        0 0 3px #ffffff44,
+        0 0 6px #ffffff44,
+        0 0 9px #ffffff44,
+        0 0 12px #ffffff44,
+        0 0 15px #ffffff44,
+        0 0 18px #ffffff44;
+    }
+}
+
+@keyframes underlineGlowOn {
+    100%{
+        color: white;
+        text-shadow: 
+        0 0 3px #ff2d75,
+        0 0 6px #ff2d75,
+        0 0 9px #ff2d75,
+        0 0 12px #ff2d75,
+        0 0 15px #ff2d75,
+        0 0 18px #ff2d75;
+    }
+    40%, 80%{
+        color: rgb(32, 40, 51);
+        text-shadow: none;
+    }
+    20%, 60%{
+        color: white;
+        text-shadow: 
+        0 0 3px #ffffff44,
+        0 0 6px #ffffff44,
+        0 0 9px #ffffff44,
+        0 0 12px #ffffff44,
+        0 0 15px #ffffff44,
+        0 0 18px #ffffff44;
+    }
+}
